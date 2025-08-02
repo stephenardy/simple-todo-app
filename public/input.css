@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+#container {
+  width: 100%;
+  max-width: 42rem; /* max-w-2xl */
+  background-color: #ffffff;
+  padding: 2rem; /* p-8 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+}
+
+/* Header Styling */
+#container h1 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+/* Form and Input Styling */
+#addTodoForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; /* gap-3 */
+  margin-bottom: 2rem; /* mb-8 */
+  flex-wrap: wrap; /* flex-wrap */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+#addTodoForm input {
+  flex: 1; /* flex-1 */
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: all 0.2s ease-in-out; /* transition-all duration-200 */
+}
+
+#addTodoForm input:focus {
+  outline: none;
+  ring: 2px solid #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+  /* border-color: transparent; focus:border-transparent */
+}
+
+/* Buttons Styling */
+#addTodoForm button {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  background-color: #2563eb; /* bg-blue-600 */
+  color: white;
+  font-weight: 600; /* font-semibold */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: all 0.2s ease-in-out; /* transition-all duration-200 */
+}
+
+#addTodoForm button:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+#addTodoForm button:focus {
+  outline: none;
+  ring: 2px solid #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+  ring-offset: 2px; /* focus:ring-offset-2 */
+}
+
+/* Todo List Styling */
+.todos-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem; /* p-6 */
+  gap: 1rem; /* space-y-4 */
+}
+
+.todos-list-container ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 36rem; /* max-w-xl */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  background-color: #ffffff;
+  padding-left: 0;
+}
+
+.todos-list-container li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .todos-list-container li {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+.todos-list-container li + li {
+  border-top: 1px solid #d1d5db;
+}
+
+/* Todo Title Styling */
+.todo-title {
+  font-weight: 500; /* font-medium */
+  font-size: 0.875rem; /* text-sm */
+  text-align: start;
+  color: #1f2937; /* text-gray-800 */
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .todo-title {
+    font-size: 1rem; /* sm:text-base */
+  }
+}
+
+.todo-title.done {
+  text-decoration: line-through;
+  color: #9ca3af; /* text-gray-400 */
+}
+
+/* Button Container Styling */
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* flex-wrap */
+  gap: 0.5rem; /* gap-2 */
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn-container {
+    flex-wrap: nowrap;
+    width: auto;
+  }
+}
+
+.action-btn {
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  border-radius: 0.25rem; /* rounded */
+  cursor: pointer;
+}
+
+.action-btn:focus {
+  outline: none;
+}
+
+.finish-btn {
+  color: white;
+  background-color: #22c55e; /* bg-green-500 */
+}
+
+.finish-btn:hover {
+  background-color: #16a34a; /* hover:bg-green-600 */
+}
+
+.uncheck-btn {
+  color: #3b82f6; /* text-blue-500 */
+  border: 1px solid transparent;
+}
+
+.uncheck-btn:hover {
+  color: black;
+  border-color: initial;
+}
+
+.update-btn {
+  color: white;
+  background-color: #3b82f6; /* bg-blue-500 */
+}
+
+.update-btn:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}
+
+.delete-btn {
+  color: white;
+  background-color: #ef4444; /* bg-red-500 */
+}
+
+.delete-btn:hover {
+  background-color: #dc2626; /* hover:bg-red-600 */
+}
